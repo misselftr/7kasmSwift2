@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,45 +17,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2O-Fa-kDX">
-                                <rect key="frame" x="277" y="213" width="33" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1v-4x-ZD4">
+                                <rect key="frame" x="274" y="302" width="10" height="20.5"/>
                                 <animations/>
-                                <state key="normal" title="Start">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tMS-qn-4YD">
+                                <rect key="frame" x="188" y="162" width="224" height="31"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="ezi-aH-GsW"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jq1-SG-5pC">
+                                <rect key="frame" x="306" y="231" width="40" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Reset">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="resetSlider:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="t9A-pX-wMR"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1v-4x-ZD4">
-                                <rect key="frame" x="288" y="362" width="10" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hesap" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGC-GF-8V1">
+                                <rect key="frame" x="190" y="107" width="220" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Özlem" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIq-5Z-9c0">
-                                <rect key="frame" x="272" y="289" width="49" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2O-Fa-kDX">
+                                <rect key="frame" x="190" y="231" width="64" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="tMS-qn-4YD">
-                                <rect key="frame" x="234" y="420" width="118" height="31"/>
-                                <animations/>
-                            </slider>
+                                <state key="normal" title="Compute">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickStartButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HMl-vi-sOp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="N2O-Fa-kDX" secondAttribute="centerY" id="Kl2-DZ-iHi"/>
-                            <constraint firstAttribute="centerX" secondItem="tMS-qn-4YD" secondAttribute="centerX" constant="7" id="LAS-ng-xwn"/>
-                            <constraint firstAttribute="centerX" secondItem="k1v-4x-ZD4" secondAttribute="centerX" constant="7" id="RJF-aM-msP"/>
-                            <constraint firstAttribute="centerX" secondItem="kIq-5Z-9c0" secondAttribute="centerX" constant="3.5" id="S6B-eP-TyO"/>
-                            <constraint firstItem="kIq-5Z-9c0" firstAttribute="top" secondItem="N2O-Fa-kDX" secondAttribute="bottom" constant="15" id="gdN-Ku-neJ"/>
-                            <constraint firstAttribute="centerX" secondItem="N2O-Fa-kDX" secondAttribute="centerX" constant="6.5" id="m6P-mR-h4i"/>
-                            <constraint firstItem="k1v-4x-ZD4" firstAttribute="top" secondItem="N2O-Fa-kDX" secondAttribute="bottom" constant="50" id="pjx-sG-s3s"/>
-                            <constraint firstItem="tMS-qn-4YD" firstAttribute="top" secondItem="k1v-4x-ZD4" secondAttribute="bottom" constant="25" id="xSL-Mh-v5p"/>
+                            <constraint firstAttribute="centerX" secondItem="tMS-qn-4YD" secondAttribute="centerX" constant="21" id="3cT-Ur-9rR"/>
+                            <constraint firstAttribute="centerY" secondItem="tMS-qn-4YD" secondAttribute="centerY" constant="123" id="Fja-Bf-i4C"/>
+                            <constraint firstAttribute="centerX" secondItem="xGC-GF-8V1" secondAttribute="centerX" constant="-11" id="MAu-XC-w7U"/>
+                            <constraint firstItem="N2O-Fa-kDX" firstAttribute="top" secondItem="tMS-qn-4YD" secondAttribute="bottom" constant="40" id="Qf4-9X-kvd"/>
+                            <constraint firstItem="N2O-Fa-kDX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="65" id="UOO-ki-ftc"/>
+                            <constraint firstAttribute="centerX" secondItem="k1v-4x-ZD4" secondAttribute="centerX" constant="21" id="Wrh-KH-Y2d"/>
+                            <constraint firstItem="k1v-4x-ZD4" firstAttribute="top" secondItem="N2O-Fa-kDX" secondAttribute="bottom" constant="40" id="caJ-lT-jTb"/>
+                            <constraint firstItem="tMS-qn-4YD" firstAttribute="top" secondItem="xGC-GF-8V1" secondAttribute="bottom" constant="40" id="iIA-SG-3rl"/>
+                            <constraint firstItem="jq1-SG-5pC" firstAttribute="leading" secondItem="N2O-Fa-kDX" secondAttribute="trailing" constant="60" id="ii8-fP-tQQ"/>
+                            <constraint firstItem="jq1-SG-5pC" firstAttribute="top" secondItem="tMS-qn-4YD" secondAttribute="bottom" constant="40" id="klI-QB-Ib9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="diaCalculate" destination="xGC-GF-8V1" id="n9O-Bz-RDB"/>
+                        <outlet property="displayLabel" destination="k1v-4x-ZD4" id="K8M-BZ-TVE"/>
+                        <outlet property="radiusSelected" destination="tMS-qn-4YD" id="pm5-Ed-Ntj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
